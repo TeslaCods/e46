@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BMW E46 Sedan (Black) — Deep Dive Presentation</title>
+    <meta name="description" content="An immersive, interactive presentation celebrating the black BMW E46 sedan: design, performance, ownership insights, gallery, and a 3D interactive model." />
+    <meta name="theme-color" content="#0b0b0c" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="BMW E46 Sedan (Black) — Deep Dive Presentation" />
+    <meta property="og:description" content="Explore the E46 sedan in depth with specs, history, a curated gallery, and an interactive 3D model." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BMW E46 Sedan (Black) — Deep Dive Presentation" />
+    <meta name="twitter:description" content="Explore the E46 sedan in depth with specs, history, a curated gallery, and an interactive 3D model." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+
+    <!-- Preload a hero image -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1920" />
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Vehicle",
+            "name":"BMW 3 Series (E46) Sedan",
+            "brand":{"@type":"Brand","name":"BMW"},
+            "model":"E46",
+            "vehicleConfiguration":"Black exterior, Sedan",
+            "vehicleModelDate":"1998-2005",
+            "bodyType":"Sedan",
+            "numberOfDoors":4,
+            "url":"https://example.com/bmw-e46-sedan-black",
+            "image":"img/title.jpg"
+        }
+    </script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site" role="banner">
+    <div class="nav">
+        <div class="brand">
+            <div class="logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" stroke="#9b7b19" stroke-width="1.6"/>
+                    <path d="M12 4v8l5.2 5.2" stroke="#9b7b19" stroke-width="1.6" />
+                </svg>
+            </div>
+            <div class="title">BMW E46 <span class="muted">Sedan • Black</span></div>
+        </div>
+        <nav aria-label="Primary">
+            <a class="hide-sm" href="#overview">Overview</a>
+            <a class="hide-sm" href="#performance">Performance</a>
+            <a class="hide-sm" href="#interactive">Interactive 3D</a>
+            <a class="hide-sm" href="#gallery">Gallery</a>
+            <button class="cta" onclick="document.getElementById('download').scrollIntoView({behavior:'smooth'})">Download</button>
+        </nav>
+    </div>
+</header>
+
+<div class="hero" aria-labelledby="hero-title">
+    <div class="hero-card reveal">
+        <div class="hero-media">
+            <img src="img/title.jpg" alt="Black BMW sedan in dramatic lighting" />
+            <div class="hero-badge" aria-label="Highlight">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.7 5.5L21 9l-4.5 4.3L17.4 21 12 17.8 6.6 21l.9-7.7L3 9l6.3-.5L12 3z" stroke="#ffd66b" /></svg>
+                Model Years 1998–2005
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="eyebrow">Iconic, balanced, timeless</div>
+            <h1 id="hero-title">BMW E46 Sedan — The Modern Classic in Black</h1>
+            <p class="lede">Celebrated for its perfect chassis balance, precise steering, and understated sophistication, the E46 sedan remains a benchmark for engaging daily driving.</p>
+            <div class="hero-actions">
+                <button class="cta" onclick="document.getElementById('performance').scrollIntoView({behavior:'smooth'})">Explore Performance</button>
+                <button class="ghost" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">View Gallery</button>
+            </div>
+            <div class="kpis" role="list">
+                <div class="kpi" role="listitem">
+                    <div class="label">Chassis</div>
+                    <div class="val">50:50 Balance</div>
+                </div>
+                <div class="kpi" role="listitem">
+                    <div class="label">Transmissions</div>
+                    <div class="val">5/6‑MT • 5‑AT</div>
+                </div>
+                <div class="kpi" role="listitem">
+                    <div class="label">Drivetrain</div>
+                    <div class="val">RWD / AWD</div>
+                </div>
+                <div class="kpi" role="listitem">
+                    <div class="label">0–100 km/h</div>
+                    <div class="val">6.5–10.0s</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="card pad reveal" aria-labelledby="quick-specs">
+        <div class="badge" id="quick-specs">Quick specs</div>
+        <div class="divider"></div>
+        <div class="specs-list" aria-describedby="quick-specs">
+            <div class="spec"><div class="k">Platform</div><div class="v">E46 (4th‑gen 3 Series)</div></div>
+            <div class="spec"><div class="k">Body</div><div class="v">4‑door Sedan</div></div>
+            <div class="spec"><div class="k">Engines</div><div class="v">M43, M52TU, M54, N42, N46, M57</div></div>
+            <div class="spec"><div class="k">Facelift</div><div class="v">2001–2002 (LCI)</div></div>
+            <div class="spec"><div class="k">Wheelbase</div><div class="v">2725 mm</div></div>
+            <div class="spec"><div class="k">Weight</div><div class="v">1350–1550 kg</div></div>
+        </div>
+    </aside>
+</div>
+
+<main id="main">
+    <section id="overview" class="grid-2">
+        <article class="card pad reveal">
+            <div class="badge">Overview</div>
+            <h2>The understated benchmark</h2>
+            <p class="muted">The E46 sedan blends refined ergonomics with tactile feedback. Its hydraulic steering, multi‑link rear suspension, and near‑perfect weight distribution deliver confidence and clarity on any road.</p>
+            <ul>
+                <li><strong>Design language</strong>: purposeful stance, clean surfacing, and iconic kidney grille.</li>
+                <li><strong>Daily usability</strong>: spacious cabin, excellent visibility, and solid NVH control.</li>
+                <li><strong>Longevity</strong>: robust drivetrains with readily available parts support.</li>
+            </ul>
+            <div class="actions-row">
+                <button class="ghost" onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})">See Timeline</button>
+                <button class="ghost" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">Common Q&A</button>
+            </div>
+        </article>
+        <aside class="card pad reveal">
+            <div class="badge">Black trims</div>
+            <div class="divider"></div>
+            <div class="grid-3">
+                <div class="spec">
+                    <div class="k">Paint</div>
+                    <div class="v">Schwarz II (668)</div>
+                </div>
+                <div class="spec">
+                    <div class="k">Metallic</div>
+                    <div class="v">Black Sapphire (475)</div>
+                </div>
+                <div class="spec">
+                    <div class="k">Shadowline</div>
+                    <div class="v">High‑gloss trim</div>
+                </div>
+            </div>
+            <p class="note" style="margin-top:8px">Shadowline deletes chrome for a stealth aesthetic that pairs perfectly with black paint.</p>
+        </aside>
+    </section>
+
+
+
+    <section id="performance" class="card pad reveal" aria-labelledby="perf-title">
+        <div class="badge">Performance</div>
+        <h2 id="perf-title">Choose your engine — see the numbers</h2>
+        <p class="muted">Pick an engine to compare power, torque, 0–100, and real‑world economy. Figures are representative and can vary by market/year.</p>
+        <div class="toggle-row" id="engine-tabs" role="tablist" aria-label="Engine variants">
+            <div class="chip active" role="tab" aria-selected="true" data-engine="318i">318i</div>
+            <div class="chip" role="tab" data-engine="320i">320i</div>
+            <div class="chip" role="tab" data-engine="325i">325i</div>
+            <div class="chip" role="tab" data-engine="330i">330i</div>
+            <div class="chip" role="tab" data-engine="330i-zhp">330i ZHP</div>
+            <div class="chip" role="tab" data-engine="320d">320d</div>
+            <div class="chip" role="tab" data-engine="330xd">330xd</div>
+        </div>
+        <div class="divider"></div>
+        <div class="grid-3" id="perf-cards" aria-live="polite"></div>
+        <p class="note">Tip: ZHP package (US/Canada) adds hotter cams, revised tune, and sport chassis, elevating response without compromising daily comfort.</p>
+    </section>
+
+    <section id="interactive" class="card pad reveal" aria-labelledby="interactive-title">
+        <div class="badge">Interactive 3D</div>
+        <h2 id="interactive-title">Explore the E46 in 3D — rotate</h2>
+        <div class="e46-3d" id="e46-3d">
+            <div class="hint">Drag to rotate • Scroll to zoom</div>
+        </div>
+
+    </section>
+
+    <section id="dynamics" class="grid-2">
+        <article class="card pad reveal">
+            <div class="badge">Driving dynamics</div>
+            <h2>Clarity at the wheel</h2>
+            <p class="muted">Hydraulic steering communicates grip with finesse. The multi‑link rear keeps composure over mid‑corner bumps. With quality tires and fresh bushings, the chassis feels telepathic.</p>
+            <ul>
+                <li><strong>Steering</strong>: hydraulic rack with linear effort build‑up.</li>
+                <li><strong>Brakes</strong>: vented discs; ZHP with uprated pads and cooling.</li>
+                <li><strong>Suspension</strong>: MacPherson strut (front), Z‑axle (rear); sport springs/dampers optional.</li>
+            </ul>
+        </article>
+        <aside class="card pad reveal">
+            <div class="badge">Ownership watchlist</div>
+            <div class="grid-3" style="margin-top:10px">
+                <div class="spec">
+                    <div class="k">Cooling system</div><div class="v">Rad/ET/thermostat ~160k km</div>
+                </div>
+                <div class="spec">
+                    <div class="k">CCV/OFHG</div><div class="v">Vac leaks & oil seepage</div>
+                </div>
+                <div class="spec">
+                    <div class="k">Bushings</div><div class="v">FCAB/RTAB wear</div>
+                </div>
+            </div>
+            <p class="note" style="margin-top:8px">Proactive maintenance transforms the E46 from “old BMW” to “refined classic.”</p>
+        </aside>
+    </section>
+
+    <section id="timeline" class="card pad reveal">
+        <div class="badge">Timeline</div>
+        <h2>E46 sedan milestones</h2>
+        <div class="timeline">
+            <div class="t-item"><strong>1998</strong> — E46 sedan debuts with refined chassis and improved rigidity.</div>
+            <div class="t-item"><strong>2001</strong> — LCI: updated lights, fascias, and interior tweaks.</div>
+            <div class="t-item"><strong>2003</strong> — Performance Package (ZHP) for NA: 235 hp, shorter final drive, chassis tune.</div>
+            <div class="t-item"><strong>2005</strong> — Final model year for E46 sedan; E90 succeeds.</div>
+        </div>
+    </section>
+
+    <section id="gallery" class="card pad reveal" aria-labelledby="gallery-title">
+        <div class="badge">Gallery</div>
+        <h2 id="gallery-title">Black E46 — visual tour</h2>
+        <div class="gallery" id="gallery-grid">
+            <figure>
+                <img loading="lazy" src="img/stealth.jpg" width="1600" height="520" alt="Black sedan in low light" />
+                <figcaption>Stealth silhouette</figcaption>
+            </figure>
+            <figure>
+                <img loading="lazy" src="img/interior.jpg" alt="Interior ambience" />
+                <figcaption>Driver‑focused interior</figcaption>
+            </figure>
+            <figure>
+                <img loading="lazy" src="img/shadowline.jpg" alt="Detail shot of trim" />
+                <figcaption>Shadowline details</figcaption>
+            </figure>
+            <figure>
+                <img loading="lazy" src="img/stance.jpg" alt="Wheels and stance" />
+                <figcaption>Timeless stance</figcaption>
+            </figure>
+            <figure>
+                <img loading="lazy" src="img/dusk.jpg" alt="Road presence at dusk" />
+                <figcaption>Presence at dusk</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="faq" class="grid-2">
+        <article class="card pad reveal faq">
+            <div class="badge">FAQ</div>
+            <details>
+                <summary>Is the E46 reliable?</summary>
+                <p>Hell nah.</p>
+            </details>
+            <details>
+                <summary>Best daily engine?</summary>
+                <p>For balance: <strong>325i</strong>. For punch: <strong>330i</strong>. For economy: <strong>320d</strong>.</p>
+            </details>
+            <details>
+                <summary>Manual or automatic?</summary>
+                <p>Automatic = <strong>Gay.</strong></p>
+            </details>
+        </article>
+        <aside id="download" class="card pad reveal">
+            <div class="badge">Downloads</div>
+            <p>Export a printable spec sheet or save this page as PDF.</p>
+            <div class="actions-row">
+                <button class="cta" onclick="window.print()">Print / Save PDF</button>
+                <button class="ghost" onclick="exportJSON()">Export JSON Specs</button>
+            </div>
+
+        </aside>
+    </section>
+</main>
+
+<button class="float-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+</button>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="close" aria-label="Close" onclick="closeLightbox()">Close ✕</button>
+    <img alt="" />
+</div>
+
+<footer>
+    Built with care for enthusiasts. @ashleylxx
+</footer>
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+</script>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
