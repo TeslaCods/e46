@@ -6,7 +6,7 @@ const container = document.getElementById('e46-3d');
 const scene = new THREE.Scene();
 
 const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75)); /* adaptive perf on mobile */
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 container.appendChild(renderer.domElement);
@@ -16,6 +16,7 @@ camera.position.set(3.6, 1.6, 4.6);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
+controls.screenSpacePanning = false;
 controls.target.set(0, 1.0, 0);
 controls.minDistance = 2.0;
 controls.maxDistance = 10.0;
@@ -32,6 +33,12 @@ ground.rotation.x = -Math.PI/2; ground.position.y = 0.01; scene.add(ground);
 const loader = new GLTFLoader();
 loader.load('assets/e46.glb', (gltf)=>{
     const root = gltf.scene;
+    root.traverse(o=>{
+        if(o.isMesh){
+            o.castShadow = false; o.receiveShadow = false;
+            if(o.material && o.material.color) o.material.color.convertSRGBToLinear?.();
+        }
+    });
     const box = new THREE.Box3().setFromObject(root);
     const size = new THREE.Vector3(); box.getSize(size);
     const center = new THREE.Vector3(); box.getCenter(center);
@@ -46,11 +53,16 @@ loader.load('assets/e46.glb', (gltf)=>{
     container.appendChild(warn);
 });
 
-const onResize = ()=>{
-    const w = container.clientWidth, h = container.clientHeight;
-    renderer.setSize(w, h); camera.aspect = w/h; camera.updateProjectionMatrix();
-};
-window.addEventListener('resize', onResize);
+/* Adaptive canvas sizing driven by container size */
+const ro = new ResizeObserver(entries=>{
+    for(const entry of entries){
+        const { width, height } = entry.contentRect;
+        renderer.setSize(width, height, false);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    }
+});
+ro.observe(container);
 
 (function animate(){
     requestAnimationFrame(animate);
